@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────
+ * nplus-design preview site
+ *
+ * Each `.theme-*` block defines a full token set. The page
+ * applies one theme class to a wrapper, so we can render the
+ * SAME component in two different themes side-by-side on
+ * one page without conflicts.
+ *
+ * Token names match the @nplus/shared contract.
+ * ───────────────────────────────────────────────────────── */
+
+@theme {
+  /* Default (host site) — neutral grays + brand blue. Used for the chrome
+     of this preview site itself (nav, footer, layout). Component previews
+     override per-section via the .theme-* wrappers below. */
+  --color-surface-50: #f7f7f5;
+  --color-surface-100: #ecedea;
+  --color-surface-200: #d8dad5;
+  --color-surface-300: #b3b6af;
+  --color-surface-400: #82877e;
+  --color-surface-500: #5b6058;
+  --color-surface-600: #3f433d;
+  --color-surface-700: #292c27;
+  --color-surface-800: #181a17;
+  --color-surface-900: #0d0e0c;
+  --color-surface-950: #050605;
+
+  --color-brand-50: #eef2ff;
+  --color-brand-100: #e0e7ff;
+  --color-brand-200: #c7d2fe;
+  --color-brand-300: #a5b4fc;
+  --color-brand-400: #818cf8;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f46e5;
+  --color-brand-700: #4338ca;
+  --color-brand-800: #3730a3;
+  --color-brand-900: #312e81;
+
+  --font-sans:
+    "Inter", "Noto Sans TC", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", "Noto Serif TC", Georgia, serif;
+  --font-display: "Fraunces", "Noto Serif TC", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* ── nplus.page theme — cool stone + Fiestaware turquoise ─── */
+.theme-nplus-page {
+  --color-surface-50: #f7f7f5;
+  --color-surface-100: #ecedea;
+  --color-surface-200: #d8dad5;
+  --color-surface-300: #b3b6af;
+  --color-surface-400: #82877e;
+  --color-surface-500: #5b6058;
+  --color-surface-600: #3f433d;
+  --color-surface-700: #292c27;
+  --color-surface-800: #181a17;
+  --color-surface-900: #0d0e0c;
+  --color-surface-950: #050605;
+
+  --color-brand-50: #ecf4f7;
+  --color-brand-100: #cfe5ec;
+  --color-brand-200: #a3cfdc;
+  --color-brand-300: #6db4c7;
+  --color-brand-400: #3ba1bd;
+  --color-brand-500: #1f8aa5;
+  --color-brand-600: #176c83;
+  --color-brand-700: #135668;
+  --color-brand-800: #0e3f4c;
+  --color-brand-900: #082832;
+}
+
+/* ── nplus.faith theme — warm parchment + oxblood + forest ── */
+.theme-nplus-faith {
+  --color-surface-50: #faf6ee;
+  --color-surface-100: #f1ebe0;
+  --color-surface-200: #e2d8c6;
+  --color-surface-300: #c8b89e;
+  --color-surface-400: #9a8a72;
+  --color-surface-500: #6b5e4d;
+  --color-surface-600: #4a3f33;
+  --color-surface-700: #332b22;
+  --color-surface-800: #1f1814;
+  --color-surface-900: #14100c;
+  --color-surface-950: #0a0806;
+
+  --color-brand-50: #fbece9;
+  --color-brand-100: #f4d3cc;
+  --color-brand-200: #e6a89d;
+  --color-brand-300: #d4866f;
+  --color-brand-400: #c45f4a;
+  --color-brand-500: #8a3a2c;
+  --color-brand-600: #6e2c20;
+  --color-brand-700: #54211a;
+  --color-brand-800: #3a1611;
+  --color-brand-900: #220c08;
+
+  --color-brand-alt-50: #ecf0eb;
+  --color-brand-alt-100: #d3dcd1;
+  --color-brand-alt-200: #a8b9a4;
+  --color-brand-alt-300: #819a78;
+  --color-brand-alt-400: #5d7755;
+  --color-brand-alt-500: #3f5638;
+  --color-brand-alt-600: #324429;
+  --color-brand-alt-700: #253321;
+  --color-brand-alt-800: #1a2519;
+  --color-brand-alt-900: #111810;
+
+  --font-serif: "Source Serif 4", "Noto Serif TC", Georgia, serif;
+  --font-display: "Source Serif 4", "Noto Serif TC", Georgia, serif;
+}
+
+html {
+  font-family: var(--font-sans);
+  color-scheme: light;
+}
+body {
+  background: var(--color-surface-50);
+  color: var(--color-surface-700);
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+/* The preview iframe needs each theme block to fully repaint its bg too. */
+.theme-nplus-page,
+.theme-nplus-faith {
+  background: var(--color-surface-50);
+  color: var(--color-surface-700);
+}

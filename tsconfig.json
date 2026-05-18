@@ -1,0 +1,9 @@
+{
+  "extends": "@nplus/shared/tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  }
+}

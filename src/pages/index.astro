@@ -1,0 +1,57 @@
+---
+import Base from "@/layouts/Base.astro";
+---
+
+<Base title="Overview">
+  <section class="mx-auto max-w-3xl px-6 py-16">
+    <p class="text-xs font-semibold tracking-[0.25em] text-brand-600 uppercase">N+ Design</p>
+    <h1
+      class="font-display mt-4 text-4xl leading-tight font-semibold tracking-tight text-surface-800 md:text-5xl"
+    >
+      One design system, two voices.
+    </h1>
+    <p class="mt-6 text-lg leading-relaxed text-surface-600">
+      <code class="font-mono text-sm text-brand-600">@nplus/shared</code> ships a small set of design
+      tokens and Astro components consumed by both
+      <a href="https://nplus.page" class="text-brand-600 hover:text-brand-700">nplus.page</a>
+      (personal brand, cool stone &amp; Fiestaware turquoise) and
+      <a href="https://nplus.faith" class="text-brand-600 hover:text-brand-700">nplus.faith</a>
+      (theology podcast, warm parchment &amp; oxblood). Same primitives — different themes.
+    </p>
+    <p class="mt-4 text-base leading-relaxed text-surface-500">
+      This site renders every primitive in both themes, side-by-side, so a change to the shared
+      package can be reviewed visually before it lands.
+    </p>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+      <a
+        href="/tokens"
+        class="group block rounded-lg border border-surface-200 p-6 no-underline transition-colors hover:border-brand-500"
+      >
+        <p class="text-xs font-semibold tracking-widest text-brand-600 uppercase">01</p>
+        <h2 class="font-display mt-3 text-xl font-semibold text-surface-800 group-hover:text-brand-600">
+          Tokens
+        </h2>
+        <p class="mt-2 text-sm leading-relaxed text-surface-500">
+          Surface scale, brand scale, typography. Side-by-side, every step.
+        </p>
+        <span class="mt-4 inline-block text-xs font-medium text-brand-600">View →</span>
+      </a>
+
+      <a
+        href="/components"
+        class="group block rounded-lg border border-surface-200 p-6 no-underline transition-colors hover:border-brand-500"
+      >
+        <p class="text-xs font-semibold tracking-widest text-brand-600 uppercase">02</p>
+        <h2 class="font-display mt-3 text-xl font-semibold text-surface-800 group-hover:text-brand-600">
+          Components
+        </h2>
+        <p class="mt-2 text-sm leading-relaxed text-surface-500">
+          <code class="font-mono">ReadingProgress</code>,
+          <code class="font-mono">SubscribeBand</code>, in both themes.
+        </p>
+        <span class="mt-4 inline-block text-xs font-medium text-brand-600">View →</span>
+      </a>
+    </div>
+  </section>
+</Base>

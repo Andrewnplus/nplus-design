@@ -1,0 +1,149 @@
+---
+import Base from "@/layouts/Base.astro";
+import Swatch from "@/components/Swatch.astro";
+
+const surfaceSteps = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
+const brandSteps = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
+---
+
+<Base title="Tokens">
+  <section class="mx-auto max-w-6xl px-6 py-16">
+    <p class="text-xs font-semibold tracking-[0.25em] text-brand-600 uppercase">Tokens</p>
+    <h1
+      class="font-display mt-4 text-4xl leading-tight font-semibold tracking-tight text-surface-800 md:text-5xl"
+    >
+      The contract, then both themes.
+    </h1>
+    <p class="mt-6 max-w-2xl text-base leading-relaxed text-surface-600">
+      Every consumer site exposes the same set of CSS-variable names. Only the values differ. That
+      means a component written against <code class="font-mono">var(--color-brand-500)</code> works
+      identically in both themes without rewriting.
+    </p>
+
+    <!-- ── Surface scale ───────────────────────────────────────── -->
+    <h2
+      class="font-display mt-16 text-2xl font-semibold tracking-tight text-surface-800 md:text-3xl"
+    >
+      Surface scale
+    </h2>
+    <p class="mt-3 text-sm leading-relaxed text-surface-500">
+      Neutral palette — page background through deepest dark band. 11 steps.
+    </p>
+
+    <div class="mt-8 grid gap-10 md:grid-cols-2">
+      <div class="theme-nplus-page rounded-lg border border-surface-200 p-6">
+        <p class="text-xs font-semibold tracking-widest text-brand-600 uppercase">
+          nplus.page · cool stone
+        </p>
+        <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {surfaceSteps.map((s) => (
+            <Swatch name={`surface-${s}`} cssVar={`--color-surface-${s}`} />
+          ))}
+        </div>
+      </div>
+
+      <div class="theme-nplus-faith rounded-lg border border-surface-200 p-6">
+        <p class="text-xs font-semibold tracking-widest text-brand-600 uppercase">
+          nplus.faith · warm parchment
+        </p>
+        <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {surfaceSteps.map((s) => (
+            <Swatch name={`surface-${s}`} cssVar={`--color-surface-${s}`} />
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Brand scale ─────────────────────────────────────────── -->
+    <h2
+      class="font-display mt-20 text-2xl font-semibold tracking-tight text-surface-800 md:text-3xl"
+    >
+      Brand scale
+    </h2>
+    <p class="mt-3 text-sm leading-relaxed text-surface-500">
+      Primary accent — CTAs, eyebrows, hover states. 10 steps.
+    </p>
+
+    <div class="mt-8 grid gap-10 md:grid-cols-2">
+      <div class="theme-nplus-page rounded-lg border border-surface-200 p-6">
+        <p class="text-xs font-semibold tracking-widest text-brand-600 uppercase">
+          nplus.page · Fiestaware turquoise
+        </p>
+        <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {brandSteps.map((s) => (
+            <Swatch name={`brand-${s}`} cssVar={`--color-brand-${s}`} />
+          ))}
+        </div>
+      </div>
+
+      <div class="theme-nplus-faith rounded-lg border border-surface-200 p-6">
+        <p class="text-xs font-semibold tracking-widest text-brand-600 uppercase">
+          nplus.faith · oxblood
+        </p>
+        <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {brandSteps.map((s) => (
+            <Swatch name={`brand-${s}`} cssVar={`--color-brand-${s}`} />
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Brand-alt (OTW only) ────────────────────────────────── -->
+    <h2
+      class="font-display mt-20 text-2xl font-semibold tracking-tight text-surface-800 md:text-3xl"
+    >
+      Brand-alt scale <span class="text-base font-normal text-surface-400">— nplus.faith only</span>
+    </h2>
+    <p class="mt-3 text-sm leading-relaxed text-surface-500">
+      Secondary accent — only defined in OTW's theme. <code class="font-mono">nplus.page</code>{" "}
+      doesn't expose this scale.
+    </p>
+
+    <div class="theme-nplus-faith mt-8 rounded-lg border border-surface-200 p-6">
+      <p class="text-xs font-semibold tracking-widest uppercase" style="color: var(--color-brand-alt-700);">
+        nplus.faith · deep forest
+      </p>
+      <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3">
+        {brandSteps.map((s) => (
+          <Swatch name={`brand-alt-${s}`} cssVar={`--color-brand-alt-${s}`} />
+        ))}
+      </div>
+    </div>
+
+    <!-- ── Typography ──────────────────────────────────────────── -->
+    <h2
+      class="font-display mt-20 text-2xl font-semibold tracking-tight text-surface-800 md:text-3xl"
+    >
+      Typography
+    </h2>
+
+    <div class="mt-8 grid gap-10 md:grid-cols-2">
+      <div class="theme-nplus-page rounded-lg border border-surface-200 bg-surface-50 p-6">
+        <p class="text-xs font-semibold tracking-widest text-brand-600 uppercase">nplus.page</p>
+        <p
+          class="font-display mt-6 text-3xl leading-tight font-semibold tracking-tight text-surface-800"
+        >
+          Fraunces 56px / 600
+        </p>
+        <p class="mt-4 text-base leading-relaxed text-surface-600">
+          Inter 16px / 1.7 — body text for utilitarian UI surfaces.
+        </p>
+        <p class="font-mono mt-4 text-xs text-surface-500">JetBrains Mono — code & metadata</p>
+      </div>
+
+      <div class="theme-nplus-faith rounded-lg border border-surface-200 bg-surface-50 p-6">
+        <p class="text-xs font-semibold tracking-widest text-brand-600 uppercase">nplus.faith</p>
+        <p
+          class="font-display mt-6 text-3xl leading-tight font-semibold tracking-tight text-surface-800"
+        >
+          Source Serif 4 56px / 600
+        </p>
+        <p class="mt-4 text-base leading-relaxed text-surface-600">
+          Inter 17px / 1.7 — body text. Slightly larger than nplus.page for longer reading
+          sessions.
+        </p>
+        <p class="font-mono mt-4 text-xs text-surface-500">JetBrains Mono — code & metadata</p>
+      </div>
+    </div>
+  </section>
+</Base>

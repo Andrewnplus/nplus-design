@@ -1,0 +1,16 @@
+# Prereq: GitHub Pages settings → Source = "GitHub Actions"
+
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    uses: nplus-father/workflows/.github/workflows/astro-build-deploy.yml@v1
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    secrets: inherit
