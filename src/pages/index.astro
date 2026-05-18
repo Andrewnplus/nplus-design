@@ -1,5 +1,8 @@
 ---
 import Base from "@/layouts/Base.astro";
+const base = import.meta.env.BASE_URL;
+const tokensHref = `${base}tokens/`.replace(/\/+/g, "/");
+const componentsHref = `${base}components/`.replace(/\/+/g, "/");
 ---
 
 <Base title="Overview">
@@ -25,7 +28,7 @@ import Base from "@/layouts/Base.astro";
 
     <div class="mt-12 grid gap-6 md:grid-cols-2">
       <a
-        href="/tokens"
+        href={tokensHref}
         class="group block rounded-lg border border-surface-200 p-6 no-underline transition-colors hover:border-brand-500"
       >
         <p class="text-xs font-semibold tracking-widest text-brand-600 uppercase">01</p>
@@ -39,7 +42,7 @@ import Base from "@/layouts/Base.astro";
       </a>
 
       <a
-        href="/components"
+        href={componentsHref}
         class="group block rounded-lg border border-surface-200 p-6 no-underline transition-colors hover:border-brand-500"
       >
         <p class="text-xs font-semibold tracking-widest text-brand-600 uppercase">02</p>
