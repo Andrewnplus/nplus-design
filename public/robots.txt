@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://andrewnplus.github.io/nplus-design/sitemap-index.xml
