@@ -8,3 +8,7 @@ jobs:
   check:
     uses: nplus-father/workflows/.github/workflows/astro-ci-check.yml@v1
     secrets: inherit
+    with:
+      # Owned by Andrewnplus, not the nplus-father org — org-level self-hosted
+      # runners are not reachable from here, so stay GitHub-hosted.
+      runner-labels: '["ubuntu-latest"]'
