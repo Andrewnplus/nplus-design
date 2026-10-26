@@ -33,4 +33,4 @@ npm run build
 
 ## Deploy
 
-Hosted at `design.nplus.page` (or wherever the GitHub Pages mapping lives). The deploy workflow is the standard Astro → GitHub Pages flow; see `.github/workflows/deploy.yml`.
+Hosted at <https://nplus.page/nplus-design/> — GitHub Pages serves this project repo under the custom domain of `Andrewnplus/andrewnplus.github.io`. Every push to `main` deploys via the shared Astro → GitHub Pages workflow; see `.github/workflows/deploy.yml`.
