@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "@nplus/shared": "github:Andrewnplus/nplus-shared#main",
-    "@astrojs/mdx": "^5.0.0",
     "@astrojs/sitemap": "^3.7.1",
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^6.1.1",
